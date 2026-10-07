@@ -68,6 +68,11 @@ Pile inverserP(Pile p1, Pile p2);
 /* Résumé : doubler la pile p1 dans la pile p2 */
 Pile doublerP(Pile p1,Pile p2);
 
+/* Auteur: Kevin Jean-Paul Philippe Jallet */
+/* Date: 02/10/26 */
+/* Entrees: une pile p */
+/* Sorties: une pile vide */
+/* Résumé: vide une pile p passé en paramètre */
 Pile viderP (Pile p);
 
 #endif

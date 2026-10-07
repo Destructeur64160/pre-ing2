@@ -40,10 +40,10 @@ int depiler(Pile* p){
 
 void afficherP(Pile p){
     if (p==NULL){
-        printf("|");
+        printf("\n");
     }
     else{
-        printf("|%d",p->fleche);
+        printf("%d\n",p->fleche);
         afficherP(p->suivant);
     }
 }
@@ -55,4 +55,35 @@ int compterP(Pile p,int acc){
     else{
         return compterP(p->suivant,acc+1);
     }
+}
+
+Pile inverserP(Pile p1, Pile p2){
+    while (p1!=NULL){
+        p2=empiler(p2, depiler(&p1));
+    }
+    return p2;
+}
+
+Pile doublerP(Pile p1, Pile p2){
+    Pile temp;
+    Pile temp2=NULL;
+    temp=p1;
+    while(temp!=NULL){
+        temp2=empiler(temp2, temp->fleche);
+        temp = temp->suivant;
+    }
+    temp= temp2;
+    while(temp!=NULL){
+        p2=empiler(p2, temp->fleche);
+        temp=temp->suivant;
+    }
+    temp2= viderP(temp2);
+    return p2;
+}
+
+Pile viderP(Pile p){
+    while (p!=NULL){
+        depiler(&p);
+    }
+    return p;
 }

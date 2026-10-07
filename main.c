@@ -6,6 +6,7 @@ int main(){
     Pile link=NULL;
     Pile zelda=NULL;
     Pile kilton=NULL;
+    Pile temp=NULL;
     link=empiler(link, 1);
     link=empiler(link, 2);
     link=empiler(link, 3);
@@ -15,6 +16,13 @@ int main(){
     zelda=empiler(zelda,1);
     zelda=empiler(zelda,2);
     zelda=empiler(zelda,3);
+    afficherP(zelda);
+    temp=doublerP(zelda, temp);
+    afficherP(temp);
+    temp=viderP(temp);
+    temp=inverserP(kilton, temp);
+    afficherP(temp);
+    temp = viderP(temp);
     printf("link a %d fleche \n", compterP(link, 0));
     printf("link a pour fleche %d \n", depiler(&link));
     printf("link a pour fleche %d \n", depiler(&link));

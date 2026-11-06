@@ -1,0 +1,50 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include "pile.h"
+#include "file.h"
+
+int main(){
+    int a;
+    printf("saisissez une option\n");
+    printf("    0 pour pile");
+    printf("    1 pour file");
+    while (a!=0 || a!=1){
+        scanf("%d",a);
+    }
+    if (a==0){
+        Pile link=NULL;
+        Pile zelda=NULL;
+        Pile kilton=NULL;
+        Pile temp=NULL;
+        link=empiler(link, 1);
+        link=empiler(link, 2);
+        link=empiler(link, 3);
+        kilton=empiler(kilton, 1);
+        kilton=empiler(kilton, 2);
+        kilton=empiler(kilton, 3);
+        zelda=empiler(zelda,1);
+        zelda=empiler(zelda,2);
+        zelda=empiler(zelda,3);
+        afficherP(zelda);
+        temp=doublerP(zelda, temp);
+        afficherP(temp);
+        temp=viderP(temp);
+        temp=inverserP(kilton, temp);
+        afficherP(temp);
+        temp = viderP(temp);
+        printf("link a %d fleche \n", compterP(link, 0));
+        printf("link a pour fleche %d \n", depiler(&link));
+        printf("link a pour fleche %d \n", depiler(&link));
+        printf("link a pour fleche %d \n", depiler(&link));
+        printf("zelda a pour fleche %d \n", depiler(&zelda));
+        printf("zelda a pour fleche %d \n", depiler(&zelda));
+        printf("zelda a pour fleche %d \n", depiler(&zelda));
+        printf("kilton a pour fleche %d \n", depiler(&kilton));
+        printf("kilton a pour fleche %d \n", depiler(&kilton));
+        printf("kilton a pour fleche %d \n", depiler(&kilton));
+    }
+    else if(a==1){
+        
+    }
+    return 0;
+}
